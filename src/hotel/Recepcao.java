@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Recepcao {
 	
-private ArrayList<Estadia> estadias;
+	private ArrayList<Estadia> estadias;
 	
 	public Recepcao() {
 		estadias = new ArrayList<Estadia>();
