@@ -25,13 +25,13 @@ public class Recepcao {
 	}
 	
 	public int getNumDeHospedes() {
-		estadias.size();
+		return estadias.size();
 	}
 	
 	public double getLucroTotal() {
 		double valorTotal = 0.0;
 		for (Estadia estadia : estadias) {
-			valorTotal += estadia.getValor() * estadia.getDias();
+			valorTotal += estadia.getValor();
 		}
 		return valorTotal;
 		
@@ -41,7 +41,8 @@ public class Recepcao {
 		final String FIM_LINHA = System.lineSeparator();
 		String mensagem = String.format("Estadias:%s", FIM_LINHA);  
 		for (Estadia estadia: estadias){
-			 mensagem += String.format("%s (%s): %d dias com o preço de R$ %.2f", estadia.getNome(), estadia.getTipo(), estadia.getDias(), estadia.getValor());
+			 mensagem += String.format("%s (%s): %d dias com o preco de R$ %.2f", 
+					 estadia.getNome(), estadia.getTipo(), estadia.getDias(), estadia.getValor()).replace(",", ".");
 		}
 		
 		return mensagem;
